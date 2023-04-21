@@ -19,19 +19,18 @@ class Class2(Class1):
         print(super().var)
 hello_world = Class2()
 
-class Computer:
-    def __init__(self, model, *args, **kwargs):
+class Magnet:
+    def __init__(self, strong, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.model = model
-        self.memory = 128
-class Display:
-    def __init__(self, *args, **kwargs):
+        self.strong = strong
+class Vacuum_Cleaner:
+    def __init__(self, speed, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.resolution = "4k"
-class SmartPhone(Display, Computer):
+        self.speed = speed
+class Window_Cleaner(Magnet, Vacuum_Cleaner ):
     def print_info(self):
-        print(self.model)
-        print(self.resolution)
-        print(self.memory)
-iphone = SmartPhone(model ="Last")
-iphone.print_info()
+        print(self.strong)
+        print(self.speed)
+Xiomi = Window_Cleaner()
+Xiomi.print_info()
+
