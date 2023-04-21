@@ -1,8 +1,11 @@
 import logging
 import random
-
+class Pet:
+    name = "Barsik"
+    gladness = 65
+    satiety = 50
 class Human:
-    def __init__(self, name="Human", job=None, home=None, car=None):
+    def __init__(self, name="Human", job=None, home=None, car=None, pet=None):
         self.name = name
         self.money = 100
         self.gladness = 50
@@ -10,7 +13,10 @@ class Human:
         self.job = job
         self.car = car
         self.home = home
+        self.pet = pet
 
+    def get_pet(self):
+        self.pet = Pet()
     def get_home(self):
         self.home = House()
 
