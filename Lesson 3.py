@@ -1,5 +1,12 @@
 import logging
 import random
+
+logging.basicConfig(level=logging.DEBUG,
+filename="logs.log", filemode="a",
+format="We have next logging message: "
+"%(asctime)s:%(levelname)s-%(message)s"
+)
+
 class Pet:
     name = "Barsik"
     gladness = 65
@@ -67,14 +74,17 @@ class Human:
                 return
         if manage == "fuel":
             print("I bought fuel")
+            logging.info("I bought fuel")
             self.money -= 100
             self.car.fuel += 100
         elif manage == "food":
             print("Bought food")
+            logging.info("Bought food")
             self.money -= 50
             self.home.food += 50
         elif manage == "delicacies":
             print("Hooray! Delicious!")
+            logging.info("Hooray! Delicious!")
             self.gladness += 10
             self.satiety += 2
             self.money -= 15
@@ -93,19 +103,30 @@ class Human:
     def days_indexes(self, day):
         day = f" Today the {day} of {self.name}'s life "
         print(f"{day:=^50}", "\n")
+        logging.info(f"{day:=^50}")
         human_indexes = self.name + "'s indexes"
         print(f"{human_indexes:^50}", "\n")
+        logging.info(f"{human_indexes:^50}")
         print(f"Money – {self.money}")
+        logging.info(f"Money – {self.money}")
         print(f"Satiety – {self.satiety}")
+        logging.info(f"Satiety – {self.satiety}")
         print(f"Gladness – {self.gladness}")
+        logging.info(f"Gladness – {self.gladness}")
         home_indexes = "Home indexes"
         print(f"{home_indexes:^50}", "\n")
+        logging.info(f"{home_indexes:^50}")
         print(f"Food – {self.home.food}")
+        logging.info(f"Food – {self.home.food}")
         print(f"Mess – {self.home.mess}")
+        logging.info(f"Mess – {self.home.mess}")
         car_indexes = f"{self.car.brand} car indexes"
         print(f"{car_indexes:^50}", "\n")
+        logging.info(f"{car_indexes:^50}")
         print(f"Fuel – {self.car.fuel}")
+        logging.info(f"Fuel – {self.car.fuel}")
         print(f"Strength – {self.car.strength}")
+        logging.info(f"Strength – {self.car.strength}")
 
     def is_alive(self):
         if self.gladness < 0:
